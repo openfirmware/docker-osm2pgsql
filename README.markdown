@@ -8,13 +8,23 @@ Can be built from the Dockerfile:
 
     # docker build -t openfirmware/osm2pgsql github.com/openfirmware/docker-osm2pgsql.git
 
+This currently builds osm2pgsql for Debian from the master branch.
+
 ## Running osm2pgsql
 
-TODO
+Once the image is built, you can run a single-use container with osm2pgsql. Args will be passed to bash, so you will have access to environment variables in your run command.
+
+    # docker run -i -t --rm openfirmware/osm2pgsql -c 'osm2pgsql -h'
+
+When used with a postgres-osm container, it can import data directly into the database:
+
+    # docker run -i -t --rm --link postgres-osm:pg -v ~/osm:/osm openfirmware/osm2pgsql -c 'osm2pgsql --create --slim --cache 2000 --database $PG_ENV_OSM_DB --username $PG_ENV_OSM_USER --host pg --port $PG_PORT_5432_TCP_PORT /osm/extract.osm.pbf'
+
+More tutorial information will be added soon in a guide. If you have a particular scenario in mind, contact me and I will try to create a guide for that situation.
 
 ## Todo
 
-This Dockerfile is UNFINISHED.
+* Add tags for releases of specific versions of osm2pgsql
 
 ## About
 
