@@ -30,7 +30,7 @@ RUN apt-get update && apt-get install -y \
     rm -rf /var/lib/apt/lists/*
 
 ENV HOME /root
-ENV OSM2PGSQL_VERSION 0.86.0
+ENV OSM2PGSQL_VERSION 0.87.0
 
 RUN mkdir src &&\
     cd src &&\
