@@ -8,7 +8,7 @@ Can be built from the Dockerfile:
 
     # docker build -t openfirmware/osm2pgsql github.com/openfirmware/docker-osm2pgsql.git
 
-This currently builds osm2pgsql for Debian from the master branch.
+This currently builds osm2pgsql for Debian from a specific tag; see the Dockerfile for the specific version. Alternatively, specify the tag and download the image from the Docker Hub.
 
 ## Running osm2pgsql
 
@@ -23,8 +23,6 @@ When used with a postgres-osm container, it can import data directly into the da
 For more information on running an import, please see TUTORIAL.markdown. If you have a particular scenario in mind, contact me and I will try to create a guide for that situation.
 
 ## Todo
-
-* Add tags for releases of specific versions of osm2pgsql
 
 ## About
 
